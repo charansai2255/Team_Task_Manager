@@ -2,9 +2,13 @@
   "name": "team-task-manager",
   "version": "1.0.0",
   "description": "Full stack team task manager",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
     "start": "node backend/server.js",
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "npm run build --prefix frontend",
     "dev": "npm run dev --prefix backend"
   },
   "engines": {
