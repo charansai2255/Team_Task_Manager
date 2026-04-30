@@ -16,12 +16,12 @@ const api = axios.create({
 // Request interceptor: log the full URL
 api.interceptors.request.use(
   (config) => {
-    const fullUrl = new URL(config.url, config.baseURL).toString();
+    // In production, baseURL might be relative (e.g. '/api'), which crashes the URL constructor.
+    // We'll use a safer way to log.
+    const fullUrl = config.baseURL ? `${config.baseURL.replace(/\/$/, '')}/${config.url?.replace(/^\//, '')}` : config.url;
     console.log('[API Request]', {
       method: config.method?.toUpperCase(),
-      fullUrl,
-      baseURL: config.baseURL,
-      relativeUrl: config.url
+      url: fullUrl
     });
     return config;
   },
