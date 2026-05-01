@@ -2,7 +2,6 @@
 
 A high-fidelity, full-stack task management platform built for modern teams. Featuring a premium SaaS aesthetic, glassmorphic UI, and robust real-time tracking.
 
-![Dashboard Preview](https://via.placeholder.com/1200x600?text=Premium+Task+Manager+Dashboard)
 
 ## ✨ Key Features
 
